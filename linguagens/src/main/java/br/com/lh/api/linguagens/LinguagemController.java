@@ -29,4 +29,9 @@ public class LinguagemController {
     public String linguagemPreferida() {
         return "Java";
     }
+
+    @GetMapping(value = "/linguagens")
+    public List<Linguagem> listarLinguagens() {
+        return linguagens;
+    }
 }

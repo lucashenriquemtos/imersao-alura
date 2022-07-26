@@ -21,6 +21,11 @@ public class LinguagemController {
 
     @GetMapping(value = "/linguagens")
     public List<Linguagem> listarLinguagens() {
-        return linguagens;
+        return linguagemRepository.findAll();
+    }
+
+    @PatchMapping("/linguagens")
+    public Linguagem cadastrar(@RequestBody Linguagem linguagem) {
+        return linguagemRepository.save(linguagem);
     }
 }
